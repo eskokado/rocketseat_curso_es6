@@ -1,156 +1,230 @@
+// Exercício 02
+// const usuarios = [
+//     { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+//     { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+//     { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+// ];
+
+//2.1
+// const idades = usuarios.map(function(user) {
+//     return user.idade;        
+// });
+// console.log('2.1', idades);
+
+// 2.2
+// const users = usuarios.filter(function(item) {
+//     return item.idade > 18; 
+// })
+// console.log('2.2', users);
+
+// 2.3
+// const users = usuarios.find(function(item) {
+//     return item.empresa === 'Facebook';
+// })
+// console.log('2.3', users);
+
+// 2.4
+// const users = (usuarios.map(function(item) {
+//     return {nome: item.nome, idade: item.idade * 2, empresa: item.empresa};
+// })).filter(function(item) {
+//     return item.idade <= 50;
+// });
+// console.log(users);
+
+// 3.1
+// const arr = [1, 2, 3, 4, 5];
+// console.log('3.1', arr.map(item => item + 10));
+
+// 3.2
+// Dica: Utilize uma constante pra function
+// const usuario = { nome: 'Diego', idade: 23 };
+// const mostraIdade = (usuario) => usuario.idade;
+
+// console.log('3.2', mostraIdade(usuario));
+
+// 3.3
+// Dica: Utilize uma constante pra function
+// const nome = "Diego";
+// const idade = 23;
+
+// const mostraUsuario = (nome = 'Diego', idade = 18) =>  [nome, idade];
+
+// console.log('3.3', mostraUsuario(nome, idade));
+// console.log('3.3', mostraUsuario(nome));
+
+// 3.4
+// const promise = () => (new Promise((resolve, reject) => resolve()));
+   
+   
+
+// 4.1
+// const empresa = {
+//     nome: 'Rocketseat',
+//     endereco: {
+//     cidade: 'Rio do Sul',
+//     estado: 'SC',
+//     }
+//    };
+  
+//    const {nome, endereco: {cidade}, endereco: {estado}} = empresa;
+
+//   console.log(nome); // Rocketseat
+//   console.log(cidade); // Rio do Sul
+//   console.log(estado); // SC
+   
+
+// 4.2 
+
+// function mostraInfo({nome, idade}) {
+//     //return `${usuario.nome} tem ${usuario.idade} anos.`;
+//     return `${nome} tem ${idade} anos.`;
+// }
+
+// mostraInfo({ nome: 'Diego', idade: 23 })
+
+// 5.1
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// const [x, ...y] = arr;
+
+// console.log(x); // 1
+// console.log(y); // [2, 3, 4, 5, 6]
+
+// const usuario = {
+//     nome: 'Diego',
+//     idade: 23,
+//     endereco: {
+//     cidade: 'Rio do Sul',
+//     uf: 'SC',
+//     pais: 'Brasil',
+//     }
+//    };
+
+// const usuario2 = { ...usuario, nome: 'Grabriel'};
+// const usuario3 = {...usuario, endereco:{cidade: 'Lontras'}};
+ 
+// console.log(usuario2);
+// console.log(usuario3);
+
+// const usuario = 'Diego';
+// const idade = 23;
+// console.log(`O usuário ${usuario}  possui  ${idade} anos`);
+
+
+const nome = 'Diego';
+const idade = 23;
 const usuario = {
-    nome: 'Edson',
-    idade: 53,
-    endereco: {
-        cidade: 'São Paulo',
-        estado: 'SC',
-    },
+ nome,
+ idade,
+ cidade: 'Rio do Sul',
 };
 
 console.log(usuario);
+// Exercício 01
+// class Usuario {
+//     constructor(email, senha) {
+//         this.email = email;
+//         this.senha = senha;
+//         this.admin = false;
+//     }
 
-function mostrarNome({ nome, idade, endereco: { cidade } }) {
-    console.log(nome, idade, cidade);
-}
+//     isAdmin() {
+//         return this.admin
+//     }
 
-mostrarNome(usuario);
-
-// const nome = usuario.nome;
-// const idade = usuario.idade;
-//const cidade = usuario.endereco.cidade;
-
-// const { nome, idade, endereco: { cidade } } = usuario;
-
-// console.log(nome, idade, cidade);
-
-// exemplos de valores padrao
-// const soma1 = (a = 7, b = 9) => a + b;
-// console.log(soma1(51));
-// console.log(soma1());
-
-
-// function soma(a = 7, b = 7) {
-//     return a + b;
 // }
 
-// console.log(soma(1));
-// console.log(soma());
-
-// exemplos de uso de arrows
-// const arr = [1,2,3,4,5,7,8,9];
-
-// const newArr =  arr.map(item => item * 2);
-
-// console.log(newArr);
-
-// const teste = () => {
-//     return "Teste";
-// }
-// console.log(teste());
-
-// const teste1 = () => "Teste1";
-
-// console.log(teste1());
-
-// // para objeto precisa usar ()
-// const teste3 = () => ({usuario: 'eskokado'});
-// console.log(teste3());
-
-
-// Exemplos de uso de array
-// const arr = [1,2,3,4,5,7,8,9];
-
-// const newArr =  arr.map(function(item, index) {
-//     return item + index;
-// });
-
-// console.log(newArr);
-
-// const sum = arr.reduce(function(total, next){
-//     console.log(total, next);
-//     return total + next;
-// });
-
-// console.log(sum);
-
-// const filter = arr.filter(function(item){
-//     return item % 2 === 0;
-// });
-
-// console.log(filter);
-
-// const find = arr.find(function(item){
-//     return item === 4;
-// });
-
-// console.log(find);
-
-// Exempo de uma classe com methodo statico
-// class Matematica {
-//     static soma (a, b) {
-//         return a + b;        
+// class Admin extends Usuario {
+//     constructor(email, senha) {
+//         super(email, senha);
+//         this.admin = true;
 //     }
 // }
 
-// console.log(Matematica.soma(5,4));
+// const User1 = new Usuario('email@teste.com', 'senha123');
+// const Adm1 = new Admin('email@teste.com', 'senha123');
 
-// Exemplo 3 - Metodo estatico não reconhe outros restantes da classe.
-// class TodoList {
-//     constructor() {
-//         this.todos = [];
-//     }
+// console.log(User1.isAdmin()) // false
+// console.log(Adm1.isAdmin()) // true
 
-//     static addTodo() {
-//         this.todos.push('Novo todo');
-//         console.log(this.todos);
-//     }
+// // Object Short Syntax
+// const nome = 'Edson';
+// const idade = 52;
+
+// const usuario = {
+//     nome,
+//     idade,
+//     empresa: 'rocketseat'
+// };
+
+
+// // maneira tradicional
+// // const usuario = {
+// //     nome: nome,
+// //     idade: idade,
+// //     empresa: 'rocketseat'
+// // };
+// console.log(usuario);
+
+// Templates Literais
+// const nome = 'Edson';
+// const idade = 23;
+
+// //console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos');
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+
+// SPREAD
+
+// Exemplo de SPREAD usando objeto
+// const usuario1 = {
+//     nome: 'Diego',
+//     idade: 23,
+//     empresa: 'Rocketseat'
+// };
+
+// const usuario2 = { ...usuario1, nome: 'Edson'};
+
+// console.log(usuario2);
+
+
+
+// exemplo de SPREAD com parametros de array
+// const arr1 = [1,2,3];
+// const arr2 = [4,5,6];
+
+// const arr3 = [...arr1, ...arr2];
+
+// console.log(arr3);
+
+
+// REST
+
+// Exemplo de REST com parametros de função
+// function soma(...params) {
+//     return params.reduce((total, next) => total + next);
 // }
 
-// TodoList.addTodo();
-// TodoList.addTodo();
-// TodoList.addTodo();
-// TodoList.addTodo();
+// console.log(soma(1,2,3,4));
 
-// Exemplo 2 - Herança
-// class List {
-//     constructor() {
-//         this.data = [];
-//     }
+// Exemplo de REST com array
+// const arr = [1,2,3,4];
 
-//     add(data) {
-//         this.data.push(data);
-//         console.log(this.data);
-//     }
-// }
+// const [a, b, ...c] = arr;
 
-// class TodoList extends List{
-//     constructor() {
-//         super();
-
-//         this.usuario = "Edson Shideki Kokado";
-//     }
-
-//     mostraUsuario() {
-//         console.log(this.usuario);
-//     }
+// console.log(a);
+// console.log(b);
+// console.log(c);
 
 
-//     // ######### Exemplo 1 - sem herança
-//     // constructor() {
-//     //     this.todos = [];
-//     // }
+// Exemplo de REST com objetos
+// const usuario = {
+//     nome: 'Edson',
+//     idade: 52,
+//     empresa: 'Esk Info Tech Web'
+// };
 
-//     // addTodo() {
-//     //     this.todos.push('Novo todo');
-//     //     console.log(this.todos);
-//     // }
-// }
+// const { nome, ...resto} = usuario;
 
-// var MinhaLista = new TodoList();
+// console.log(nome);
+// console.log(resto);
 
-// document.getElementById('novotodo').onclick = function() {
-//     // MinhaLista.addTodo();
-//     MinhaLista.add('Novo todo por herança');
-// }
-
-// MinhaLista.mostraUsuario();
